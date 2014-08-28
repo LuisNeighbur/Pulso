@@ -1,0 +1,19 @@
+{
+  "name": "Puls",
+  "description":"Puls is a social life",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LuisNeighbur/Pulso.git"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "swig": "~1.0.0",
+    "connect-redis": "~1.4.7",
+    "underscore": "~1.5.2",
+    "passport": "0.1.17",
+    "passport-twitter": "~1.0.2",
+    "mongoose": "~3.6.19",
+    "socket.io": "~1.0.6"
+  }
+}

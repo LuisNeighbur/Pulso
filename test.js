@@ -41,5 +41,5 @@ var homeController = require('./app/controllers/home');
 homeController(io, users,sessionStore);
 
 
-server.listen(3000);
+server.listen(80);
 console.log("I'm has listening my master!");

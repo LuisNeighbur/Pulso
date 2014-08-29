@@ -42,6 +42,6 @@ app.get('/', function (req,res){
 var homeController = require('./app/controllers/home');
 homeController(io, users,sessionStore);
 
-
-server.listen(3000);
+var port = process.env.PORT || 3000;
+server.listen(port);
 console.log("I'm has listening my master!");

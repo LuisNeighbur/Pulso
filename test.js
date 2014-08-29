@@ -14,17 +14,18 @@ swig.setDefaults({
 app.engine('html', swig.renderFile );
 app.set('view engine', 'html');
 app.set('views', './app/views');
+var sessionStore = new RedisStore({});
 // Add post, cookie and session support
 app.configure(function(){
 	app.use( express.static('./public') );
 
+	
 	app.use( express.logger() );
 	app.use( express.cookieParser() );
 	app.use( express.bodyParser() );
-
 	app.use( express.session({
 		secret : "lolcatz",
-		store  : new RedisStore({})
+		store  : sessionStore
 		// store  : new RedisStore({
 		//	host : conf.redis.host,
 		//	port : conf.redis.port,
@@ -32,13 +33,12 @@ app.configure(function(){
 		//	pass : conf.redis.pass
 		// });	
 	}) );
-
 	/*app.use(passport.initialize());
 	app.use(passport.session());*/
 });
 
 var homeController = require('./app/controllers/home');
-homeController(io, users);
+homeController(io, users,sessionStore);
 
 
 server.listen(3000);

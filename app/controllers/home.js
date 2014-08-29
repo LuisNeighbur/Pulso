@@ -44,7 +44,6 @@ var homeController = function(server,users,sessionStore){
 			next();
 		});
 	};
-
 	server.on('connection', function(req){
 		console.log('I have a new Client Master!');
 		req.on('ready', function(){

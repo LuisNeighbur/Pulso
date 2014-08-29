@@ -36,7 +36,9 @@ app.configure(function(){
 	/*app.use(passport.initialize());
 	app.use(passport.session());*/
 });
-
+app.get('/', function (req,res){
+	res.render('index');
+});
 var homeController = require('./app/controllers/home');
 homeController(io, users,sessionStore);
 
